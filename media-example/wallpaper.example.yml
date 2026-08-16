@@ -1,0 +1,67 @@
+# ==========================================================================
+#  dsh-wallpaper 配置示例
+# --------------------------------------------------------------------------
+#  说明：
+#    1. 把本文件复制为  $DSH_HOME/wallpaper/wallpaper.yml
+#       （默认 $DSH_HOME = ~/.dsh ，Windows 上通常是 C:\Users\<你>\.dsh）
+#       如果设置了环境变量 DSH_HOME，则用 $DSH_HOME\wallpaper 目录。
+#    2. 把要用到的图片/视频文件放到同一个目录下：
+#       $DSH_HOME/wallpaper/
+#       ├── wallpaper.yml          # 本配置
+#       ├── mountains.jpg          # 你的图片
+#       ├── aurora.mp4             # 你的动态视频
+#       └── sparkle.gif            # 你的动态图片(GIF)
+#    3. 修改文件后保存，浏览器端会自动轮询并应用最新配置（无需重启）。
+#       轮询间隔约 3 秒。
+# ==========================================================================
+
+# 总开关：false 关闭全部背景。
+enabled: true
+
+# 显示模式：
+#   static   - 只显示第一张壁纸
+#   carousel - 按 intervalSec 间隔在 wallpapers 中轮播
+#   off      - 关闭
+mode: carousel
+
+# 轮播切换间隔（秒）。仅 mode=carousel 时生效。
+intervalSec: 30
+
+# 切换动画时长（毫秒）。
+transitionMs: 800
+
+# 壁纸整体不透明度 0~1（1 完全不透明）。
+opacity: 1.0
+
+# 高斯模糊像素（0 = 不模糊），可让背景更有“磨砂”感。
+blur: 0
+
+# 黑色压暗层不透明度 0~1。开启后可在壁纸上加一层半透明黑，
+# 让聊天文字更易读。视觉上类似手机壁纸的“深色模式遮罩”。
+dim: 0.25
+
+# 填充方式：
+#   cover   - 铺满并裁切（默认）
+#   contain - 完整显示（可能留黑边）
+fit: cover
+
+# ---------------------------------------------------------------
+# 壁纸列表（按顺序）。
+# 每项字段：
+#   file  - 文件名（放在 wallpaper 目录中的文件）
+#   title - 可选，仅用于 alt/标题
+#   type  - 可选，自动按扩展名识别；视频文件建议显式写 video
+#           （否则按扩展名：.mp4/.webm/.mov 视为 video，其余视为 image）
+# ---------------------------------------------------------------
+wallpapers:
+  - file: mountains.jpg
+    title: 山景
+    type: image
+
+  - file: aurora.mp4
+    title: 极光视频
+    type: video
+
+  - file: sparkle.gif
+    title: 闪烁动图
+    type: image

@@ -1,0 +1,56 @@
+{
+  "name": "dsh-wallpaper",
+  "version": "0.1.0",
+  "private": false,
+  "description": "dsh-wallpaper: a DeepSeek Harness Web plugin that lets you set a custom background image/video for the session interface. Supports a single static/dynamic wallpaper or a timed carousel of several. Ships prebuilt — no build step required to install.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": []
+    }
+  },
+  "scripts": {
+    "build": "node -e \"console.log('dsh-wallpaper ships prebuilt lib/. If you edit lib/client.js or lib/index.js, no bundling is required — commit the files as-is.')\""
+  },
+  "keywords": [
+    "deepseek",
+    "deepseek-harness",
+    "cordis",
+    "wallpaper",
+    "background",
+    "dsh-plugin"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/HLLO9728/dsh-wallpaper#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HLLO9728/dsh-wallpaper.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HLLO9728/dsh-wallpaper/issues"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "cordis.patch.yml",
+    "media-example/wallpaper.example.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  }
+}

@@ -1,0 +1,11 @@
+# dsh-wallpaper: this patch inserts a single loader row for the plugin. The
+# row's `name` is the npm package name, so the host `lib/index.js` is loaded
+# and the client bundle declared in `package.json`'s `dsh.client` is picked up
+# automatically by the web shell.
+#
+# Because this bundle patch is listed in the profile's `dsh.profile.bundles`,
+# this insert is applied as part of that bundle layer.
+
+- insert:
+    - id: wallpaper
+      name: dsh-wallpaper
