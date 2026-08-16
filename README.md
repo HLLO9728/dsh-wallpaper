@@ -243,27 +243,6 @@ export WALLPAPER_DIR="$HOME/Pictures/dsh-wallpapers"
 
 ---
 
-## 发布到 GitHub
-
-把本目录推到一个 GitHub 仓库（仓库名建议就叫 `wallpaper`）：
-
-```bash
-cd C:\Users\28388\Desktop\wallpaper
-git init
-git add .
-git commit -m "feat: dsh-wallpaper v0.1.0 - DSH session background plugin"
-git branch -M main
-git remote add origin https://github.com/HLLO9728/dsh-wallpaper.git
-git push -u origin main
-```
-
-`.gitignore` 已过滤 `node_modules` 与媒体文件，仓库保持干净、不含任何私有壁纸文件。
-
-> 只发布 GitHub 时，别人用 `github:HLLO9728/dsh-wallpaper` 安装即可，无需 npm。
-> （本项目暂不发布 npm。）
-
----
-
 ## 已知限制 / 说明
 
 - **让壁纸“穿透”显示**：插件会自动把 DSH 主界面的**最底层全幅表面**置为透明
