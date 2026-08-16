@@ -46,22 +46,16 @@ dim: 0.25
 fit: cover
 
 # ---------------------------------------------------------------
-# 壁纸列表（按顺序）。
+# 壁纸列表（按顺序，插件会再按文件名自然排序）。
 # 每项字段：
 #   file  - 文件名（放在 wallpaper 目录中的文件）
 #   title - 可选，仅用于 alt/标题
 #   type  - 可选，自动按扩展名识别；视频文件建议显式写 video
 #           （否则按扩展名：.mp4/.webm/.mov 视为 video，其余视为 image）
+# 仓库里附带一张示例图 media-example/demo-wallpaper.jpg，可复制到
+# 你的 $DSH_HOME/wallpaper 目录后直接引用。
 # ---------------------------------------------------------------
 wallpapers:
-  - file: mountains.jpg
-    title: 山景
-    type: image
-
-  - file: aurora.mp4
-    title: 极光视频
-    type: video
-
-  - file: sparkle.gif
-    title: 闪烁动图
+  - file: demo-wallpaper.jpg
+    title: 渐变示例
     type: image

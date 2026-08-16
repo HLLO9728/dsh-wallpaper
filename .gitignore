@@ -26,3 +26,6 @@ media/
 *.mp4
 *.webm
 *.mov
+
+# The single bundled demo image (no private content) is an exception.
+!media-example/demo-wallpaper.jpg
