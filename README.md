@@ -243,6 +243,27 @@ export WALLPAPER_DIR="$HOME/Pictures/dsh-wallpapers"
 
 ---
 
+## 停用 / 恢复插件（纯净启动）
+
+DSH 仍在内测，若担心更新后壁纸插件引发兼容问题，可以用仓库自带的脚本临时停用，**让 DSH 纯净启动**（插件完全不加载），需要时再一键恢复。
+
+```bash
+# 停用（从 web profile 的 bundle 移除 dsh-wallpaper）
+node ./scripts/stop-wallpaper.mjs
+
+# 恢复壁纸
+node ./scripts/start-wallpaper.mjs
+```
+
+> 运行环境需能执行 `node`（DSH 本身基于 Node，所以一定可用）。
+> 脚本会**自动备份**你的 profile 配置到 `package.json.dsh-wallpaper.bak`，停用/恢复都幂等，可反复执行。
+
+**流程**：跑 `stop` 之后 **手动重启 DSH**（停掉 `dsh web` 再重新启动），插件即完全卸载加载、不影响任何功能；恢复时跑 `start` 再重启即可。
+
+> Windows 若报脚本执行策略限制，改用 `node` 运行即可（上面的命令本就用 node，无此问题）。
+
+---
+
 ## 已知限制 / 说明
 
 > ⚠️ **壁纸体积警告**：用**视频**当壁纸时请控制文件体积。浏览器会完整加载/解码每个视频，
